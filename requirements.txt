@@ -7,3 +7,4 @@ keras==2.3.1
 tensorflow==1.14.0
 werkzeug==1.0.1
 gevent==20.9.0
+gunicorn==19.9.0
