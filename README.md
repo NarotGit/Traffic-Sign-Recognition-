@@ -15,4 +15,5 @@ Link:"https://github.com/NarotGit/Traffic-Sign-Recognition-"
 
 • A glimpse of the web app:
 
-![GIF](readme_resources/predicting-genre-web-app.gif)
+![ezgif-4-882818488cba](https://user-images.githubusercontent.com/76248668/102696992-6260d300-4258-11eb-9388-6810b8979f2b.gif)
+
