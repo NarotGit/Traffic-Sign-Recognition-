@@ -3,7 +3,7 @@
 
 • Dataset:(https://www.kaggle.com/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign)
 
-• This repository consists of files required to deploy this Traffic sign recognition using __deep neural networks__, Web app___created with Flask__
+• This repository consists of files required to deploy this Traffic sign recognition using __deep neural networks__, Web app ___created with Flask___
 
 • If you want to view the deployed model, click on the following link:
 link:
