@@ -1,1 +1,1 @@
-web: gunicorn app:TSR_app.py
+web: gunicorn app:TSR_app
