@@ -5,7 +5,7 @@
 
 • This repository consists of files required to deploy a Traffic sign recognition model using __deep neural networks__ and Web app ___created with Flask___
 
-• If you want to view the deployed model, click on the following link:
+• If you want to view the deployed model, click on the following link:<br>
 link:"https://traffic-sign-recognization-api.herokuapp.com/"
 
 • If you are searching for __Code__, __Algorithms used__ and __Accuracy__ of the model...Click the link mentioned below for the same:
