@@ -1,0 +1,199 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TSR System</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+
+	nav{
+    		height: 90px;
+	}
+	.navbar{
+		padding-left: 480px;
+	}
+	.navbar-brand{
+		font-size:50px;
+		font-weight: bold;
+	}
+        .multicolortext {
+     	 	background-image: linear-gradient(to right, #f0737f, #f0737f,#f0737f,#f0737f);
+        	-webkit-background-clip: text;
+        	-moz-background-clip: text;
+        	background-clip: text;
+        	color: transparent;
+        }	
+
+        body{
+ 		background-image: url("https://i.pinimg.com/originals/f1/48/60/f148607e8eb3766b601a8039fbae86df.jpg");
+		background-repeat: no-repeat;
+ 		background-attachment: fixed;
+ 	 	background-size: 100% 100%;
+		-webkit-filter: brightness(0.8);
+    		filter: brightness(0.8);
+		color: white;
+	}	
+	.img-preview{
+		margin-left:220px;
+
+	}
+
+	.btn{
+		margin-left:320px;
+	}
+	
+	}
+	#result {
+		margin-left:275px;
+		color: #0a1c4ed1;	}
+	.result{
+		margin-left:275px;
+	}
+	.loader{
+		margin-left:350px;
+	}
+.footer{
+	margin-top:240px;
+	margin-left:480px;
+   	font-size: 14px;
+	padding: 20px;
+	flex-shrink: 0;
+	position: relative;
+	background-size: 500% 500%;
+	
+}
+.contact:hover {
+  color: #787878;
+}
+	</style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><span class="multicolortext">Traffic Signs Recognition</span></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="content" style="margin-top:2em">
+		<div class="container">
+		  <div class="row">
+			<div class="col-lg-6 bd" >
+			  <h3 style="margin-left: -250px; margin-top:35px; font-weight: bold; color:#ff3862;">Traffic sign recognition system using <br>deep neural networks :</h3>
+			  <br>
+			  <p style="margin-left: -250px; font-size:25px; line-height: 35px; font-family:Sans-serif;">You must have heard about the self-driving cars in which<br> the passenger can fully depend on the car for traveling.<br> But to achieve level 5 autonomous, it is necessary for<br> vehicles to understand and follow all traffic rules. So we<br>have made a traffic sign recognizer using a deep neural<br>network model that can classify traffic signs present in the<br>image into different categories. With this model, we are <br>able to read and understand traffic signs which are a very<br>important task for all autonomous vehicles.</p>
+				<!--<img src="lungs.jpg" style="height:325px; margin-left: -100px;" class="img-rounded" alt="Gesture">-->       
+			</div>
+			<div class="col-lg-6">
+				<div>
+					
+			<form action = "http://localhost:5000/" id="upload-file" method="post" style="margin-left: 310px; margin-top:35px; size:200px 200px;" enctype="multipart/form-data">
+				<h4>Upload Image</h4>
+				<label for="imageUpload" class="upload-label">
+					Choose...
+				</label>
+				<input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg">
+			</form>
+			
+
+			<div class="image-section" style="display:none;">
+				<div class="img-preview">
+					<div id="imagePreview">
+					</div>
+				</div>
+				<div>
+					<button type="button" class="btn btn-danger btn-lg " id="btn-predict">Predict!</button>
+				</div>
+			</div>
+
+			<div class="loader" style="display:none;"></div>
+
+			<h3 class="result">
+				<span id="result"> </span>
+			</h3>
+
+		</div>
+			</div>
+			 
+		  </div>
+		</div>
+		</div>
+	<div class='footer'>
+            <div class="contact">
+                <a target="_blank" href="https://github.com/NarotGit/Traffic-Sign-Recognition-"><i class="fa fa-github" style="font-size:24px;color:white"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/narotham-reddy-3683b5202/"><i class="fa fa-linkedin-square" style="font-size:24px;color:white" ></i></a>
+            </div>
+            <p class='footer-description'></p>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <script>
+$(document).ready(function () {
+    // Init
+    $('.image-section').hide();
+    $('.loader').hide();
+    $('#result').hide();
+
+    // Upload Preview
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imageUpload").change(function () {
+        $('.image-section').show();
+        $('#btn-predict').show();
+        $('#result').text('');
+        $('#result').hide();
+        readURL(this);
+    });
+
+    // Predict
+    $('#btn-predict').click(function () {
+        var form_data = new FormData($('#upload-file')[0]);
+
+        // Show loading animation
+        $(this).hide();
+        $('.loader').show();
+
+        // Make prediction by calling api /predict
+        $.ajax({
+            type: 'POST',
+            url: '/predict',
+            data: form_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            async: true,
+            success: function (data) {
+                // Get and display the result
+                $('.loader').hide();
+                $('#result').fadeIn(600);
+		$('#result').text(data);
+                console.log('Success!');
+            },
+        });
+    });
+
+});
+
+</script>    
+</footer>
+
+</html>
