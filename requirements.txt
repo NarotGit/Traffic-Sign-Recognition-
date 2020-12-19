@@ -5,7 +5,6 @@ scikit-learn==0.23.2
 matplotlib==3.3.2
 keras==2.3.1
 tensorflow==1.14.0
-jolib<==0.17.0
 opencv==3.4.2
 werkzeug==1.0.1
 gevent==20.9.0
