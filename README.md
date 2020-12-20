@@ -8,7 +8,7 @@
 • If you want to view the deployed model, click on the following link:<br>
 link:"https://traffic-sign-recognization-api.herokuapp.com/"
 
-• If you are searching for __Code__, __Algorithms used__ and __Accuracy__ of the model...Click the link mentioned below for the same:
+• If you are searching for __Code__, __Algorithms used__ and __Accuracy__ of the model...Click the link mentioned below:
 link:"https://github.com/NarotGit/Traffic-Sign-Recognition-/blob/main/traffic_sign_recognition.ipynb"
 
 • For complete project files to deploy this model.link below:
