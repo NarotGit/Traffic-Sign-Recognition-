@@ -1,7 +1,7 @@
 Flask==1.1.2
 gunicorn
 Werkzeug==1.0.1
-gevent=20.9.0
+gevent==20.9.0
 numpy==1.16.4
 scipy==1.5.2
 scikit-learn==0.23.2
