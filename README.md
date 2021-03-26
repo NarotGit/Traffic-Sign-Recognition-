@@ -12,6 +12,7 @@ link:"https://traffic-sign-recognization-api.herokuapp.com/"
 link:"https://github.com/NarotGit/Traffic-Sign-Recognition-/blob/main/traffic_sign_recognition.ipynb"
 
 • For complete project files to deploy this model.link below:
+
 Link:"https://github.com/NarotGit/Traffic-Sign-Recognition-"
 
 •  Please do ⭐ the repository, if it helped you in anyway.
